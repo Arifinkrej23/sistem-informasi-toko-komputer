@@ -8,319 +8,284 @@
 Dashboard - Sistem Penjualan Komputer
 </title>
 
-
 <link rel="stylesheet"
 href="{{ asset('css/bootstrap.min.css') }}">
 
-
 </head>
-
-
-
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
-
-
 @include('layout.navbar')
-
-
-
-
-
 
 <main class="container mt-4 flex-grow-1">
 
+    <!-- Welcome Card -->
 
+    <div class="card shadow mb-4 border-0">
 
+        <div class="card-body text-center">
 
+            <h1 class="fw-bold text-primary">
 
-<div class="card shadow mb-4">
+                Dashboard
 
+            </h1>
 
-<div class="card-body text-center">
+            <p class="mt-3">
 
+                Selamat datang,
 
+                <b>
+                    {{ Auth::user()->name }}
+                </b>
 
-<h1 class="fw-bold">
+            </p>
 
-Dashboard
+            <span class="badge bg-primary fs-6">
 
-</h1>
+                {{ Auth::user()->role }}
 
+            </span>
 
+            <p class="text-muted mt-3">
 
+                Sistem Informasi Penjualan Toko Komputer
 
-<p class="mt-3">
+            </p>
 
-Selamat datang
+        </div>
 
-<b>
-{{ Auth::user()->name }}
-</b>
+    </div>
 
-</p>
 
 
 
-<span class="badge bg-primary">
 
-{{ Auth::user()->role }}
+    <!-- Statistik -->
 
-</span>
+    <div class="row">
 
+        <!-- Kategori -->
 
+        <div class="col-md-3 mb-4">
 
-<p class="text-muted mt-3">
+            <div class="card shadow border-0 h-100 text-center">
 
-Silahkan pilih menu untuk mengelola sistem penjualan komputer
+                <div class="card-body">
 
-</p>
+                    <h5>Kategori</h5>
 
+                    <h1 class="text-primary">
 
+                        {{ $kategori }}
 
+                    </h1>
 
-</div>
+                    <p class="text-muted">
 
+                        Total kategori produk
 
-</div>
+                    </p>
 
+                    <a href="/kategori"
+                    class="btn btn-primary">
 
+                        Masuk
 
+                    </a>
 
+                </div>
 
+            </div>
 
+        </div>
 
 
-<div class="row">
 
 
 
+        <!-- Produk -->
 
+        <div class="col-md-3 mb-4">
 
+            <div class="card shadow border-0 h-100 text-center">
 
-<div class="col-md-3 mb-4">
+                <div class="card-body">
 
+                    <h5>Produk</h5>
 
-<div class="card shadow h-100 text-center">
+                    <h1 class="text-success">
 
+                        {{ $produk }}
 
-<div class="card-body">
+                    </h1>
 
+                    <p class="text-muted">
 
+                        Total data produk
 
-<h4>
+                    </p>
 
-Kategori
+                    <a href="/produk"
+                    class="btn btn-success">
 
-</h4>
+                        Masuk
 
+                    </a>
 
-<p class="text-muted">
+                </div>
 
-Kelola kategori produk
+            </div>
 
-</p>
+        </div>
 
 
 
 
-<a href="/kategori"
-class="btn btn-primary">
 
+        <!-- Transaksi -->
 
-Masuk
+        <div class="col-md-3 mb-4">
 
+            <div class="card shadow border-0 h-100 text-center">
 
-</a>
+                <div class="card-body">
 
+                    <h5>Transaksi</h5>
 
+                    <h1 class="text-warning">
 
+                        {{ $transaksi }}
 
-</div>
+                    </h1>
 
+                    <p class="text-muted">
 
-</div>
+                        Total transaksi
 
+                    </p>
 
-</div>
+                    <a href="/transaksi"
+                    class="btn btn-warning">
 
+                        Masuk
 
+                    </a>
 
+                </div>
 
+            </div>
 
+        </div>
 
 
 
 
-<div class="col-md-3 mb-4">
 
+        <!-- Pembayaran -->
 
-<div class="card shadow h-100 text-center">
+        <div class="col-md-3 mb-4">
 
+            <div class="card shadow border-0 h-100 text-center">
 
-<div class="card-body">
+                <div class="card-body">
 
+                    <h5>Pembayaran</h5>
 
+                    <h1 class="text-danger">
 
-<h4>
+                        {{ $pembayaran }}
 
-Produk
+                    </h1>
 
-</h4>
+                    <p class="text-muted">
 
+                        Total pembayaran
 
-<p class="text-muted">
+                    </p>
 
-Kelola data komputer
+                    <a href="/pembayaran"
+                    class="btn btn-danger">
 
-</p>
+                        Masuk
 
+                    </a>
 
+                </div>
 
+            </div>
 
-<a href="/produk"
-class="btn btn-success">
+        </div>
 
+    </div>
 
-Masuk
 
 
-</a>
 
 
+    <!-- Menu Cepat -->
 
+    <div class="card shadow border-0">
 
-</div>
+        <div class="card-body">
 
+            <h4 class="mb-4">
 
-</div>
+                Menu Cepat
 
+            </h4>
 
-</div>
+            <div class="row">
 
+                <div class="col-md-3 mb-2">
 
+                    <a href="/kategori"
+                    class="btn btn-outline-primary w-100">
 
+                        Kelola Kategori
 
+                    </a>
 
+                </div>
 
+                <div class="col-md-3 mb-2">
 
+                    <a href="/produk"
+                    class="btn btn-outline-success w-100">
 
+                        Kelola Produk
 
-<div class="col-md-3 mb-4">
+                    </a>
 
+                </div>
 
-<div class="card shadow h-100 text-center">
+                <div class="col-md-3 mb-2">
 
+                    <a href="/transaksi"
+                    class="btn btn-outline-warning w-100">
 
-<div class="card-body">
+                        Kelola Transaksi
 
+                    </a>
 
+                </div>
 
-<h4>
+                <div class="col-md-3 mb-2">
 
-Transaksi
+                    <a href="/pembayaran"
+                    class="btn btn-outline-danger w-100">
 
-</h4>
+                        Kelola Pembayaran
 
+                    </a>
 
-<p class="text-muted">
+                </div>
 
-Kelola penjualan
+            </div>
 
-</p>
+        </div>
 
-
-
-
-<a href="/transaksi"
-class="btn btn-warning">
-
-
-Masuk
-
-
-</a>
-
-
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-md-3 mb-4">
-
-
-<div class="card shadow h-100 text-center">
-
-
-<div class="card-body">
-
-
-
-<h4>
-
-Pembayaran
-
-</h4>
-
-
-<p class="text-muted">
-
-Kelola pembayaran
-
-</p>
-
-
-
-
-<a href="/pembayaran"
-class="btn btn-danger">
-
-
-Masuk
-
-
-</a>
-
-
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
+    </div>
 
 </main>
 
@@ -328,26 +293,15 @@ Masuk
 
 
 
-
-
-
 <footer class="bg-dark text-white text-center py-3 mt-auto">
 
+    <p class="mb-0">
 
-<p class="mb-0">
+        © 2026 Sistem Informasi Penjualan Toko Komputer
 
-© 2026 Sistem Informasi Penjualan Toko Komputer
-
-</p>
-
+    </p>
 
 </footer>
-
-
-
-
-
-
 
 </body>
 
