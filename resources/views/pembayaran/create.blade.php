@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
 <title>Tambah Pembayaran</title>
 
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-<body>
+<body class="bg-light">
 
 
 @include('layout.navbar')
 
 
-
 <div class="container mt-4">
+
+
+<div class="card shadow">
+
+
+<div class="card-body">
 
 
 <h2>Tambah Pembayaran</h2>
 
 
 
-
-<form action="/pembayaran"
-method="POST">
-
+<form action="/pembayaran" method="POST">
 
 @csrf
-
-
 
 
 
@@ -42,11 +40,10 @@ Transaksi
 </label>
 
 
-<select name="transaksi_id"
-class="form-control">
+<select name="transaksi_id" class="form-control">
 
 
-<option>
+<option value="">
 -- Pilih Transaksi --
 </option>
 
@@ -61,7 +58,8 @@ class="form-control">
 Transaksi #{{ $t->id }}
 
 -
-Rp {{ number_format($t->total_harga) }}
+
+Rp {{ number_format($t->total_harga,0,',','.') }}
 
 
 </option>
@@ -79,13 +77,14 @@ Rp {{ number_format($t->total_harga) }}
 
 
 <label class="mt-3">
+
 Metode Pembayaran
+
 </label>
 
 
 
-<select name="metode_pembayaran"
-class="form-control">
+<select name="metode_pembayaran" class="form-control">
 
 
 <option>
@@ -110,32 +109,37 @@ QRIS
 
 
 
+
+
 <label class="mt-3">
+
 Jumlah Bayar
+
 </label>
 
 
 
 <input
-
 type="number"
-
 name="jumlah_bayar"
-
 class="form-control">
+
+
 
 
 
 
 
 <label class="mt-3">
-Status
+
+Status Pembayaran
+
 </label>
 
 
 
-<select name="status_pembayaran"
-class="form-control">
+
+<select name="status_pembayaran" class="form-control">
 
 
 <option>
@@ -155,7 +159,8 @@ Belum Lunas
 
 
 
-<button class="btn btn-success mt-3">
+
+<button class="btn btn-primary mt-3">
 
 Simpan
 
@@ -163,14 +168,20 @@ Simpan
 
 
 
+
+
 </form>
 
+
+</div>
+
+
+</div>
 
 
 </div>
 
 
 </body>
-
 
 </html>

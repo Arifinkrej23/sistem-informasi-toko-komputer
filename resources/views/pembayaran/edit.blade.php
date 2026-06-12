@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
 <title>Edit Pembayaran</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-<body>
+<body class="bg-light">
 
 
 @include('layout.navbar')
 
 
-
 <div class="container mt-4">
+
+
+<div class="card shadow">
+
+
+<div class="card-body">
 
 
 <h2>Edit Pembayaran</h2>
 
 
 
-
-<form action="/pembayaran/{{ $pembayaran->id }}"
-method="POST">
+<form action="/pembayaran/{{ $pembayaran->id }}" method="POST">
 
 
 @csrf
@@ -40,13 +39,18 @@ method="POST">
 
 
 
+
 <label>
+
 Transaksi
+
 </label>
 
 
-<select name="transaksi_id"
-class="form-control">
+
+<select name="transaksi_id" class="form-control">
+
+
 
 
 
@@ -57,11 +61,7 @@ class="form-control">
 <option value="{{ $t->id }}"
 
 
-@if($t->id == $pembayaran->transaksi_id)
-
-selected
-
-@endif
+{{ $t->id == $pembayaran->transaksi_id ? 'selected' : '' }}
 
 
 >
@@ -69,10 +69,18 @@ selected
 
 Transaksi #{{ $t->id }}
 
+-
+
+Rp {{ number_format($t->total_harga,0,',','.') }}
+
+
 </option>
 
 
+
 @endforeach
+
+
 
 
 
@@ -82,18 +90,38 @@ Transaksi #{{ $t->id }}
 
 
 
+
+
+
 <label class="mt-3">
+
 Metode Pembayaran
+
 </label>
 
 
-<input
 
-name="metode_pembayaran"
+<select name="metode_pembayaran" class="form-control">
 
-class="form-control"
 
-value="{{ $pembayaran->metode_pembayaran }}">
+<option {{ $pembayaran->metode_pembayaran == 'Cash' ? 'selected' : '' }}>
+Cash
+</option>
+
+
+<option {{ $pembayaran->metode_pembayaran == 'Transfer' ? 'selected' : '' }}>
+Transfer
+</option>
+
+
+<option {{ $pembayaran->metode_pembayaran == 'QRIS' ? 'selected' : '' }}>
+QRIS
+</option>
+
+
+</select>
+
+
 
 
 
@@ -101,7 +129,9 @@ value="{{ $pembayaran->metode_pembayaran }}">
 
 
 <label class="mt-3">
+
 Jumlah Bayar
+
 </label>
 
 
@@ -120,24 +150,35 @@ value="{{ $pembayaran->jumlah_bayar }}">
 
 
 
+
+
 <label class="mt-3">
-Status
+
+Status Pembayaran
+
 </label>
 
 
 
-<select name="status_pembayaran"
-class="form-control">
+
+<select name="status_pembayaran" class="form-control">
 
 
-<option>
+
+<option {{ $pembayaran->status_pembayaran == 'Lunas' ? 'selected' : '' }}>
+
 Lunas
+
 </option>
 
 
-<option>
+
+<option {{ $pembayaran->status_pembayaran == 'Belum Lunas' ? 'selected' : '' }}>
+
 Belum Lunas
+
 </option>
+
 
 
 </select>
@@ -146,7 +187,10 @@ Belum Lunas
 
 
 
-<button class="btn btn-primary mt-3">
+
+
+
+<button class="btn btn-warning mt-3">
 
 Update
 
@@ -155,8 +199,14 @@ Update
 
 
 
+
 </form>
 
+
+</div>
+
+
+</div>
 
 
 </div>

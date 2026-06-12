@@ -11,7 +11,6 @@ class KategoriProdukController extends Controller
     public function index()
     {
         $kategori = KategoriProduk::all();
-
         return view('kategori.index', compact('kategori'));
     }
 
@@ -48,8 +47,6 @@ class KategoriProdukController extends Controller
     public function edit($id)
     {
         $kategori = KategoriProduk::find($id);
-
-
         return view('kategori.edit', compact('kategori'));
     }
 
@@ -67,8 +64,6 @@ class KategoriProdukController extends Controller
 
 
         $kategori = KategoriProduk::find($id);
-
-
         $kategori->update([
             'nama_kategori'=>$request->nama_kategori,
             'deskripsi'=>$request->deskripsi
@@ -88,8 +83,6 @@ class KategoriProdukController extends Controller
     {
 
         $kategori = KategoriProduk::find($id);
-
-
         $kategori->delete();
 
 

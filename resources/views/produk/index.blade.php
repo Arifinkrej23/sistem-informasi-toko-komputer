@@ -1,32 +1,19 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<title>
-Data Produk
-</title>
+<title>Data Produk</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
-
-
 
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
 
-
 @include('layout.navbar')
-
-
-
-
 
 
 
@@ -34,16 +21,10 @@ href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
-
-
 <div class="card shadow">
 
 
-
 <div class="card-body">
-
-
-
 
 
 
@@ -51,23 +32,15 @@ href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
-
-
 <div>
 
-
 <h2 class="fw-bold">
-
 Data Produk
-
 </h2>
 
 
-
 <p class="text-muted mb-0">
-
 Kelola data produk komputer
-
 </p>
 
 
@@ -76,27 +49,16 @@ Kelola data produk komputer
 
 
 
-
-
 <a href="/produk/create"
-
 class="btn btn-primary">
 
-
 + Tambah Produk
-
 
 </a>
 
 
 
-
-
-
 </div>
-
-
-
 
 
 
@@ -104,15 +66,11 @@ class="btn btn-primary">
 
 @if(session('success'))
 
-
-
 <div class="alert alert-success">
 
 {{ session('success') }}
 
 </div>
-
-
 
 @endif
 
@@ -121,18 +79,7 @@ class="btn btn-primary">
 
 
 
-
-<div class="table-responsive">
-
-
-
-
-
 <table class="table table-hover table-bordered">
-
-
-
-
 
 
 <thead class="table-dark">
@@ -140,21 +87,12 @@ class="btn btn-primary">
 
 <tr>
 
-
 <th>No</th>
-
 <th>Kategori</th>
-
 <th>Nama Produk</th>
-
 <th>Harga</th>
-
 <th>Stok</th>
-
-<th width="200">
-Aksi
-</th>
-
+<th>Aksi</th>
 
 </tr>
 
@@ -164,12 +102,7 @@ Aksi
 
 
 
-
-
-
 <tbody>
-
-
 
 
 
@@ -178,8 +111,6 @@ Aksi
 
 
 <tr>
-
-
 
 
 <td>
@@ -191,15 +122,12 @@ Aksi
 
 
 
-
-
 <td>
 
 
 @if($p->kategori)
 
 {{ $p->kategori->nama_kategori }}
-
 
 @else
 
@@ -214,8 +142,6 @@ Aksi
 
 
 
-
-
 <td>
 
 <b>
@@ -224,9 +150,7 @@ Aksi
 
 </b>
 
-
 </td>
-
 
 
 
@@ -237,9 +161,7 @@ Aksi
 
 Rp {{ number_format($p->harga,0,',','.') }}
 
-
 </td>
-
 
 
 
@@ -263,8 +185,6 @@ Rp {{ number_format($p->harga,0,',','.') }}
 
 
 
-
-
 <td>
 
 
@@ -274,13 +194,9 @@ Rp {{ number_format($p->harga,0,',','.') }}
 
 class="btn btn-warning btn-sm">
 
-
 Edit
 
-
 </a>
-
-
 
 
 
@@ -316,18 +232,12 @@ Hapus
 
 
 
-
 </form>
 
 
 
 
-
 </td>
-
-
-
-
 
 
 
@@ -346,17 +256,11 @@ Hapus
 
 <tr>
 
-
-<td colspan="6"
-
-class="text-center">
-
+<td colspan="6" class="text-center">
 
 Belum ada data produk
 
-
 </td>
-
 
 </tr>
 
@@ -368,14 +272,7 @@ Belum ada data produk
 
 
 
-
-
-
 </tbody>
-
-
-
-
 
 
 
@@ -384,23 +281,10 @@ Belum ada data produk
 
 
 
-
-
-</div>
-
-
-
-
-
-
-
 </div>
 
 
 </div>
-
-
-
 
 
 
@@ -412,20 +296,14 @@ Belum ada data produk
 
 
 
-
-
 <footer class="bg-dark text-white text-center py-3 mt-auto">
-
 
 
 <p class="mb-0">
 
-
 © 2026 Sistem Informasi Penjualan Toko Komputer
 
-
 </p>
-
 
 
 </footer>
@@ -433,9 +311,6 @@ Belum ada data produk
 
 
 
-
-
 </body>
-
 
 </html>

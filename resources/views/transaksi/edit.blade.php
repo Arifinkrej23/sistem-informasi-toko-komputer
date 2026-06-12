@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-
 <title>Edit Transaksi</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-
-<body>
+<body class="bg-light d-flex flex-column min-vh-100">
 
 
 @include('layout.navbar')
 
 
 
-<div class="container mt-4">
-
-
-<h2>Edit Transaksi</h2>
+<main class="container mt-4 flex-grow-1">
 
 
 
+<div class="card shadow">
 
-<form action="/transaksi/{{ $transaksi->id }}"
-method="POST">
+
+<div class="card-body">
+
+
+
+<h2 class="fw-bold">
+
+Edit Transaksi
+
+</h2>
+
+
+
+
+
+<form action="/transaksi/{{ $transaksi->id }}" method="POST">
 
 
 @csrf
@@ -42,14 +48,21 @@ method="POST">
 
 
 
+
+
 <label>
+
 Produk
+
 </label>
 
 
 
-<select name="produk_id"
-class="form-control">
+
+<select name="produk_id" class="form-control">
+
+
+
 
 
 
@@ -57,15 +70,11 @@ class="form-control">
 
 
 
+
+
 <option value="{{ $p->id }}"
 
-
-@if($p->id == $transaksi->produk_id)
-
-selected
-
-@endif
-
+{{ $p->id == $transaksi->produk_id ? 'selected' : '' }}
 
 >
 
@@ -74,11 +83,12 @@ selected
 
 -
 
-Rp {{ number_format($p->harga) }}
-
+Rp {{ number_format($p->harga,0,',','.') }}
 
 
 </option>
+
+
 
 
 
@@ -86,7 +96,13 @@ Rp {{ number_format($p->harga) }}
 
 
 
+
+
+
 </select>
+
+
+
 
 
 
@@ -98,6 +114,9 @@ Rp {{ number_format($p->harga) }}
 Jumlah
 
 </label>
+
+
+
 
 
 
@@ -115,7 +134,9 @@ value="{{ $transaksi->jumlah }}">
 
 
 
-<button class="btn btn-primary mt-3">
+
+
+<button class="btn btn-warning mt-3">
 
 Update
 
@@ -124,11 +145,41 @@ Update
 
 
 
+
+
 </form>
 
 
 
+
+
 </div>
+
+
+</div>
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+
+
+<p class="mb-0">
+
+© 2026 Sistem Informasi Penjualan Toko Komputer
+
+</p>
+
+
+</footer>
+
 
 
 

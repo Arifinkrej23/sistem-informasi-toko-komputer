@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<title>
-Sistem Penjualan Komputer
-</title>
+<title>Sistem Penjualan Komputer</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
-
-
 
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -23,8 +15,6 @@ href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
-
-<!-- Navbar -->
 
 <nav class="navbar navbar-dark bg-dark">
 
@@ -42,6 +32,7 @@ Sistem Penjualan Komputer
 
 
 <a href="/login"
+
 class="btn btn-primary">
 
 Login
@@ -61,8 +52,6 @@ Login
 
 
 
-<!-- Content -->
-
 <main class="container mt-5 flex-grow-1">
 
 
@@ -76,9 +65,6 @@ Login
 
 
 
-<!-- Kiri -->
-
-
 <div class="col-md-6">
 
 
@@ -89,7 +75,6 @@ Login
 Sistem Informasi
 
 <br>
-
 
 Penjualan Toko Komputer
 
@@ -104,7 +89,7 @@ Penjualan Toko Komputer
 
 
 Aplikasi pengelolaan penjualan komputer
-untuk mengatur kategori produk, data produk,
+untuk mengatur kategori produk, produk,
 transaksi, dan pembayaran.
 
 
@@ -114,8 +99,8 @@ transaksi, dan pembayaran.
 
 
 
-
 <a href="/login"
+
 class="btn btn-success btn-lg mt-3">
 
 
@@ -135,18 +120,19 @@ Mulai Sekarang
 
 
 
-<!-- Kanan -->
 
 
 <div class="col-md-6">
 
 
 
-<div class="card shadow-lg">
+<div class="card shadow border-0">
 
 
 
 <div class="card-body">
+
+
 
 
 
@@ -167,16 +153,13 @@ Fitur Sistem
 
 
 
-
-
 <div class="col-md-6 mb-3">
 
 
-<div class="card h-100">
+<div class="card h-100 shadow-sm">
 
 
 <div class="card-body text-center">
-
 
 
 <h5>
@@ -193,7 +176,6 @@ Kelola kategori produk
 </p>
 
 
-
 </div>
 
 
@@ -211,11 +193,10 @@ Kelola kategori produk
 <div class="col-md-6 mb-3">
 
 
-<div class="card h-100">
+<div class="card h-100 shadow-sm">
 
 
 <div class="card-body text-center">
-
 
 
 <h5>
@@ -232,7 +213,6 @@ Kelola data komputer
 </p>
 
 
-
 </div>
 
 
@@ -240,8 +220,6 @@ Kelola data komputer
 
 
 </div>
-
-
 
 
 
@@ -252,11 +230,10 @@ Kelola data komputer
 <div class="col-md-6 mb-3">
 
 
-<div class="card h-100">
+<div class="card h-100 shadow-sm">
 
 
 <div class="card-body text-center">
-
 
 
 <h5>
@@ -273,7 +250,6 @@ Kelola penjualan
 </p>
 
 
-
 </div>
 
 
@@ -281,8 +257,6 @@ Kelola penjualan
 
 
 </div>
-
-
 
 
 
@@ -293,11 +267,10 @@ Kelola penjualan
 <div class="col-md-6 mb-3">
 
 
-<div class="card h-100">
+<div class="card h-100 shadow-sm">
 
 
 <div class="card-body text-center">
-
 
 
 <h5>
@@ -314,7 +287,6 @@ Kelola pembayaran
 </p>
 
 
-
 </div>
 
 
@@ -328,16 +300,18 @@ Kelola pembayaran
 
 
 
-</div>
-
-
-
-
 
 </div>
 
 
+
+
+
 </div>
+
+
+</div>
+
 
 
 
@@ -359,12 +333,7 @@ Kelola pembayaran
 
 
 
-
-<!-- Footer -->
-
-
 <footer class="bg-dark text-white text-center py-3 mt-auto">
-
 
 
 <p class="mb-0">
@@ -376,15 +345,12 @@ Kelola pembayaran
 </p>
 
 
-
 </footer>
 
 
 
 
 
-
 </body>
-
 
 </html>

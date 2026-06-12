@@ -27,7 +27,6 @@ class UserController extends Controller
         {
 
             $request->session()->regenerate();
-
             return redirect('/dashboard');
 
         }
@@ -44,7 +43,6 @@ class UserController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
 

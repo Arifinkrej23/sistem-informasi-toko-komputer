@@ -18,16 +18,9 @@ class DashboardController extends Controller
 
 
         $kategori = KategoriProduk::count();
-
-
         $produk = Produk::count();
-
-
         $transaksi = TransaksiPenjualan::count();
-
-
         $pembayaran = Pembayaran::count();
-
 
 
         return view('dashboard', compact(

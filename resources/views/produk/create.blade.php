@@ -1,49 +1,57 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
 <title>Tambah Produk</title>
 
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-<body>
+<body class="bg-light d-flex flex-column min-vh-100">
 
 
 @include('layout.navbar')
 
 
 
-<div class="container mt-4">
-
-
-<h2>Tambah Produk</h2>
+<main class="container mt-4 flex-grow-1">
 
 
 
-<form action="/produk"
-method="POST">
+<div class="card shadow">
 
+
+<div class="card-body">
+
+
+<h2 class="fw-bold">
+Tambah Produk
+</h2>
+
+
+
+
+<form action="/produk" method="POST">
 
 @csrf
 
 
 
-<label>Kategori</label>
+<label>
+Kategori
+</label>
 
 
-<select name="kategori_id"
-class="form-control">
+<select name="kategori_id" class="form-control">
 
 
 <option value="">
 -- pilih kategori --
 </option>
+
 
 
 @foreach($kategori as $k)
@@ -59,6 +67,7 @@ class="form-control">
 @endforeach
 
 
+
 </select>
 
 
@@ -71,8 +80,11 @@ Nama Produk
 
 
 <input
+type="text"
 name="nama_produk"
-class="form-control">
+class="form-control"
+placeholder="Nama produk">
+
 
 
 
@@ -86,7 +98,9 @@ Harga
 <input
 type="number"
 name="harga"
-class="form-control">
+class="form-control"
+placeholder="Harga">
+
 
 
 
@@ -100,7 +114,9 @@ Stok
 <input
 type="number"
 name="stok"
-class="form-control">
+class="form-control"
+placeholder="Stok">
+
 
 
 
@@ -113,13 +129,14 @@ Deskripsi
 
 <textarea
 name="deskripsi"
-class="form-control">
-</textarea>
+class="form-control"
+placeholder="Deskripsi"></textarea>
 
 
 
 
-<button class="btn btn-success mt-3">
+
+<button class="btn btn-primary mt-3">
 
 Simpan
 
@@ -134,7 +151,29 @@ Simpan
 </div>
 
 
-</body>
+</div>
 
+
+
+</main>
+
+
+
+
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+
+
+<p class="mb-0">
+
+© 2026 Sistem Informasi Penjualan Toko Komputer
+
+</p>
+
+
+</footer>
+
+
+
+</body>
 
 </html>

@@ -12,10 +12,7 @@ Sistem Penjualan Komputer
 <button class="navbar-toggler"
 type="button"
 data-bs-toggle="collapse"
-data-bs-target="#navbarMenu"
-aria-controls="navbarMenu"
-aria-expanded="false">
-
+data-bs-target="#navbarMenu">
 
 <span class="navbar-toggler-icon"></span>
 
@@ -33,54 +30,81 @@ id="navbarMenu">
 <ul class="navbar-nav me-auto">
 
 
+
 <li class="nav-item">
+
 <a class="nav-link"
 href="{{ url('/dashboard') }}">
+
 Dashboard
+
 </a>
+
 </li>
 
 
 
+
 <li class="nav-item">
+
 <a class="nav-link"
 href="{{ url('/kategori') }}">
+
 Kategori
+
 </a>
+
 </li>
 
 
 
 
+
 <li class="nav-item">
+
 <a class="nav-link"
 href="{{ url('/produk') }}">
+
 Produk
+
 </a>
+
 </li>
 
 
 
 
+
 <li class="nav-item">
+
 <a class="nav-link"
 href="{{ url('/transaksi') }}">
+
 Transaksi
+
 </a>
+
 </li>
+
 
 
 
 
 <li class="nav-item">
+
 <a class="nav-link"
 href="{{ url('/pembayaran') }}">
+
 Pembayaran
+
 </a>
+
 </li>
+
 
 
 </ul>
+
 
 
 
@@ -95,14 +119,20 @@ Pembayaran
 
 
 
+
+
 <form action="{{ url('/logout') }}"
 method="POST">
 
 @csrf
 
+
 <button class="btn btn-danger">
+
 Logout
+
 </button>
+
 
 </form>
 
@@ -111,12 +141,12 @@ Logout
 
 </div>
 
-
 </div>
 
 </nav>
 
 
 
-<!-- Bootstrap JS -->
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

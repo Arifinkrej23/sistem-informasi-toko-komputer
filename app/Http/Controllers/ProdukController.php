@@ -15,8 +15,6 @@ class ProdukController extends Controller
     {
 
         $produk = Produk::with('kategori')->get();
-
-
         return view('produk.index',
         compact('produk'));
 
@@ -29,8 +27,6 @@ class ProdukController extends Controller
     {
 
         $kategori = KategoriProduk::all();
-
-
         return view('produk.create',
         compact('kategori'));
 
@@ -57,13 +53,9 @@ class ProdukController extends Controller
         Produk::create([
 
             'kategori_id'=>$request->kategori_id,
-
             'nama_produk'=>$request->nama_produk,
-
             'harga'=>$request->harga,
-
             'stok'=>$request->stok,
-
             'deskripsi'=>$request->deskripsi
 
         ]);
@@ -86,8 +78,6 @@ class ProdukController extends Controller
     {
 
         $produk = Produk::findOrFail($id);
-
-
         $kategori = KategoriProduk::all();
 
 
@@ -124,15 +114,10 @@ class ProdukController extends Controller
 
         $produk->update([
 
-
             'kategori_id'=>$request->kategori_id,
-
             'nama_produk'=>$request->nama_produk,
-
             'harga'=>$request->harga,
-
             'stok'=>$request->stok,
-
             'deskripsi'=>$request->deskripsi
 
 
@@ -157,8 +142,6 @@ class ProdukController extends Controller
     {
 
         $produk = Produk::findOrFail($id);
-
-
         $produk->delete();
 
 

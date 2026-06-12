@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
 <title>Login - Sistem Penjualan Komputer</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-
 <body class="bg-light">
-
-
 
 
 
@@ -25,10 +18,7 @@ href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
-<div class="row justify-content-center align-items-center"
-style="min-height:80vh;">
-
-
+<div class="row justify-content-center align-items-center" style="min-height:80vh;">
 
 
 
@@ -39,8 +29,6 @@ style="min-height:80vh;">
 
 
 <div class="card shadow-lg">
-
-
 
 
 
@@ -70,13 +58,11 @@ Silahkan login untuk masuk ke sistem
 
 @if(session('error'))
 
-
 <div class="alert alert-danger">
 
 {{ session('error') }}
 
 </div>
-
 
 @endif
 
@@ -84,8 +70,8 @@ Silahkan login untuk masuk ke sistem
 
 
 
-<form action="/login"
-method="POST">
+
+<form action="/login" method="POST">
 
 
 @csrf
@@ -124,8 +110,6 @@ required>
 
 
 
-
-
 <div class="mb-3">
 
 
@@ -134,6 +118,7 @@ required>
 Password
 
 </label>
+
 
 
 <input
@@ -157,16 +142,13 @@ required>
 
 
 
-
-<button
-
-class="btn btn-primary w-100">
-
+<button class="btn btn-primary w-100">
 
 Login
 
-
 </button>
+
+
 
 
 
@@ -178,7 +160,11 @@ Login
 
 
 
+
+
 <hr>
+
+
 
 
 
@@ -187,8 +173,7 @@ Login
 <div class="text-center">
 
 
-<a href="/"
-class="text-decoration-none">
+<a href="/" class="text-decoration-none">
 
 
 ← Kembali ke halaman utama
@@ -204,11 +189,8 @@ class="text-decoration-none">
 
 
 
+
 </div>
-
-
-
-
 
 
 </div>
@@ -240,6 +222,5 @@ class="text-decoration-none">
 
 
 </body>
-
 
 </html>

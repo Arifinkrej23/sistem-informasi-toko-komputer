@@ -58,7 +58,6 @@ class TransaksiPenjualanController extends Controller
         $request->validate([
 
             'produk_id'=>'required',
-
             'jumlah'=>'required'
 
         ]);
@@ -75,14 +74,8 @@ class TransaksiPenjualanController extends Controller
 
 
             'user_id'=>Auth::id(),
-
-
             'produk_id'=>$request->produk_id,
-
-
             'jumlah'=>$request->jumlah,
-
-
             'total_harga'=>
             $produk->harga * $request->jumlah,
 
@@ -108,8 +101,6 @@ public function edit($id)
 {
 
     $transaksi = TransaksiPenjualan::findOrFail($id);
-
-
     $produk = Produk::all();
 
 
@@ -148,11 +139,7 @@ public function update(Request $request,$id)
 
 
         'produk_id'=>$request->produk_id,
-
-
         'jumlah'=>$request->jumlah,
-
-
         'total_harga'=>
         $produk->harga * $request->jumlah
 

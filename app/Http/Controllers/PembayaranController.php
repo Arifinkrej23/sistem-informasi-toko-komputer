@@ -65,14 +65,9 @@ class PembayaranController extends Controller
 
 
         $request->validate([
-
-
             'transaksi_id'=>'required',
-
             'metode_pembayaran'=>'required',
-
             'jumlah_bayar'=>'required',
-
             'status_pembayaran'=>'required'
 
 
@@ -85,17 +80,9 @@ class PembayaranController extends Controller
 
 
             'transaksi_id'=>$request->transaksi_id,
-
-
             'metode_pembayaran'=>$request->metode_pembayaran,
-
-
             'jumlah_bayar'=>$request->jumlah_bayar,
-
-
             'status_pembayaran'=>$request->status_pembayaran,
-
-
             'tanggal_pembayaran'=>now()
 
 
@@ -160,21 +147,10 @@ class PembayaranController extends Controller
         $pembayaran =
         Pembayaran::findOrFail($id);
 
-
-
-
         $pembayaran->update([
-
-
             'transaksi_id'=>$request->transaksi_id,
-
-
             'metode_pembayaran'=>$request->metode_pembayaran,
-
-
             'jumlah_bayar'=>$request->jumlah_bayar,
-
-
             'status_pembayaran'=>$request->status_pembayaran
 
 

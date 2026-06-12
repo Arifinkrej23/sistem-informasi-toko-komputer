@@ -1,32 +1,19 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<title>
-Transaksi Penjualan
-</title>
+<title>Transaksi Penjualan</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
-
-
 
 
 <body class="bg-light d-flex flex-column min-vh-100">
 
 
-
 @include('layout.navbar')
-
-
-
-
 
 
 
@@ -34,26 +21,17 @@ href="{{ asset('css/bootstrap.min.css') }}">
 
 
 
-
-
 <div class="card shadow">
-
 
 
 <div class="card-body">
 
 
 
-
-
 <div class="d-flex justify-content-between align-items-center mb-3">
 
 
-
-
-
 <div>
-
 
 <h2 class="fw-bold">
 
@@ -73,26 +51,17 @@ Kelola data penjualan komputer
 
 
 
-
-
-
 <a href="/transaksi/create"
 
 class="btn btn-primary">
 
-
 + Tambah Transaksi
-
 
 </a>
 
 
 
-
-
-
 </div>
-
 
 
 
@@ -104,22 +73,12 @@ class="btn btn-primary">
 
 <div class="alert alert-success">
 
-
 {{ session('success') }}
-
 
 </div>
 
 
 @endif
-
-
-
-
-
-
-
-<div class="table-responsive">
 
 
 
@@ -137,23 +96,13 @@ class="btn btn-primary">
 
 <tr>
 
-
 <th>No</th>
-
 <th>Kasir</th>
-
 <th>Produk</th>
-
 <th>Jumlah</th>
-
 <th>Total Harga</th>
-
 <th>Tanggal</th>
-
-<th width="180">
-Aksi
-</th>
-
+<th>Aksi</th>
 
 </tr>
 
@@ -165,9 +114,7 @@ Aksi
 
 
 
-
 <tbody>
-
 
 
 
@@ -194,16 +141,13 @@ Aksi
 
 
 
-
 <td>
-
 
 
 @if($t->user)
 
 {{ $t->user->name }}
 
-
 @else
 
 -
@@ -212,7 +156,6 @@ Aksi
 
 
 </td>
-
 
 
 
@@ -223,11 +166,9 @@ Aksi
 <td>
 
 
-
 @if($t->produk)
 
 {{ $t->produk->nama_produk }}
-
 
 @else
 
@@ -237,7 +178,6 @@ Aksi
 
 
 </td>
-
 
 
 
@@ -261,7 +201,6 @@ Aksi
 
 
 
-
 <td>
 
 
@@ -279,17 +218,11 @@ Rp {{ number_format($t->total_harga,0,',','.') }}
 
 
 
-
-
 <td>
-
 
 {{ $t->tanggal_transaksi }}
 
-
 </td>
-
-
 
 
 
@@ -305,12 +238,9 @@ Rp {{ number_format($t->total_harga,0,',','.') }}
 
 class="btn btn-warning btn-sm">
 
-
 Edit
 
-
 </a>
-
 
 
 
@@ -331,7 +261,6 @@ class="d-inline">
 
 
 
-
 <button
 
 onclick="return confirm('Hapus transaksi ini?')"
@@ -340,7 +269,6 @@ class="btn btn-danger btn-sm">
 
 
 Hapus
-
 
 </button>
 
@@ -353,8 +281,6 @@ Hapus
 
 
 </td>
-
-
 
 
 
@@ -374,17 +300,11 @@ Hapus
 
 <tr>
 
-
-<td colspan="7"
-
-class="text-center">
-
+<td colspan="7" class="text-center">
 
 Belum ada transaksi
 
-
 </td>
-
 
 </tr>
 
@@ -398,11 +318,7 @@ Belum ada transaksi
 
 
 
-
 </tbody>
-
-
-
 
 
 
@@ -413,29 +329,14 @@ Belum ada transaksi
 
 
 
-
-</div>
-
-
-
-
-
-
-
 </div>
 
 
 </div>
-
-
-
-
 
 
 
 </main>
-
-
 
 
 
@@ -447,9 +348,7 @@ Belum ada transaksi
 
 <p class="mb-0">
 
-
 © 2026 Sistem Informasi Penjualan Toko Komputer
-
 
 </p>
 
@@ -459,9 +358,6 @@ Belum ada transaksi
 
 
 
-
-
 </body>
-
 
 </html>

@@ -1,106 +1,60 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
-<title>
-Pembayaran
-</title>
+<title>Pembayaran</title>
 
-
-<link rel="stylesheet"
-href="{{ asset('css/bootstrap.min.css') }}">
-
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 </head>
 
 
-
-
 <body class="bg-light d-flex flex-column min-vh-100">
-
 
 
 @include('layout.navbar')
 
 
 
-
-
-
-
-
 <main class="container mt-4 flex-grow-1">
 
 
-
-
-
 <div class="card shadow">
-
 
 
 <div class="card-body">
 
 
 
-
-
-
 <div class="d-flex justify-content-between align-items-center mb-3">
-
-
-
-
 
 
 <div>
 
-
 <h2 class="fw-bold">
-
 Data Pembayaran
-
 </h2>
 
 
-
 <p class="text-muted mb-0">
-
 Kelola data pembayaran transaksi
-
 </p>
 
 
-
 </div>
-
-
-
-
 
 
 
 <a href="/pembayaran/create"
-
 class="btn btn-primary">
 
-
 + Tambah Pembayaran
-
 
 </a>
 
 
-
-
-
 </div>
-
-
-
-
 
 
 
@@ -108,25 +62,13 @@ class="btn btn-primary">
 
 @if(session('success'))
 
-
 <div class="alert alert-success">
-
 
 {{ session('success') }}
 
-
 </div>
 
-
 @endif
-
-
-
-
-
-
-
-<div class="table-responsive">
 
 
 
@@ -135,43 +77,21 @@ class="btn btn-primary">
 <table class="table table-hover table-bordered">
 
 
-
-
-
 <thead class="table-dark">
-
-
 
 <tr>
 
-
 <th>No</th>
-
 <th>Transaksi</th>
-
 <th>Metode</th>
-
 <th>Jumlah Bayar</th>
-
 <th>Status</th>
-
 <th>Tanggal</th>
-
-<th width="180">
-Aksi
-</th>
-
+<th>Aksi</th>
 
 </tr>
 
-
-
 </thead>
-
-
-
-
-
 
 
 
@@ -179,43 +99,24 @@ Aksi
 
 
 
-
-
-
 @forelse($pembayaran as $p)
-
-
-
 
 
 
 <tr>
 
 
-
-
-
-
 <td>
-
 {{ $loop->iteration }}
-
 </td>
 
 
 
-
-
-
-
-
 <td>
-
 
 @if($p->transaksi)
 
 Transaksi #{{ $p->transaksi->id }}
-
 
 @else
 
@@ -223,28 +124,18 @@ Transaksi #{{ $p->transaksi->id }}
 
 @endif
 
-
 </td>
 
 
 
 
-
-
-
-
-
 <td>
-
 
 <span class="badge bg-primary">
 
-
 {{ $p->metode_pembayaran }}
 
-
 </span>
-
 
 </td>
 
@@ -252,12 +143,7 @@ Transaksi #{{ $p->transaksi->id }}
 
 
 
-
-
-
-
 <td>
-
 
 <b>
 
@@ -265,12 +151,7 @@ Rp {{ number_format($p->jumlah_bayar,0,',','.') }}
 
 </b>
 
-
 </td>
-
-
-
-
 
 
 
@@ -279,9 +160,7 @@ Rp {{ number_format($p->jumlah_bayar,0,',','.') }}
 <td>
 
 
-
 @if($p->status_pembayaran == 'Lunas')
-
 
 <span class="badge bg-success">
 
@@ -290,9 +169,7 @@ Lunas
 </span>
 
 
-
 @else
-
 
 <span class="badge bg-warning">
 
@@ -301,41 +178,26 @@ Lunas
 </span>
 
 
-
 @endif
 
 
-
 </td>
 
 
 
 
 
-
-
-
-
 <td>
-
 
 {{ $p->tanggal_pembayaran }}
 
-
 </td>
 
 
 
 
 
-
-
-
-
 <td>
-
-
-
 
 
 
@@ -343,15 +205,9 @@ Lunas
 
 class="btn btn-warning btn-sm">
 
-
 Edit
 
-
 </a>
-
-
-
-
 
 
 
@@ -370,9 +226,6 @@ class="d-inline">
 
 
 
-
-
-
 <button
 
 onclick="return confirm('Hapus pembayaran ini?')"
@@ -386,34 +239,14 @@ Hapus
 </button>
 
 
-
-
-
-
 </form>
-
-
-
-
-
 
 
 
 </td>
 
 
-
-
-
-
-
-
-
 </tr>
-
-
-
-
 
 
 
@@ -423,27 +256,15 @@ Hapus
 
 
 
-
-
-
 <tr>
 
-
-<td colspan="7"
-
-class="text-center">
-
+<td colspan="7" class="text-center">
 
 Belum ada data pembayaran
 
-
 </td>
 
-
 </tr>
-
-
-
 
 
 
@@ -454,39 +275,16 @@ Belum ada data pembayaran
 
 
 
-
-
 </tbody>
-
-
-
-
-
 
 
 </table>
 
 
 
-
-
 </div>
 
-
-
-
-
-
-
 </div>
-
-
-</div>
-
-
-
-
-
 
 
 
@@ -496,28 +294,17 @@ Belum ada data pembayaran
 
 
 
-
-
-
-
 <footer class="bg-dark text-white text-center py-3 mt-auto">
-
 
 
 <p class="mb-0">
 
-
 © 2026 Sistem Informasi Penjualan Toko Komputer
-
 
 </p>
 
 
-
 </footer>
-
-
-
 
 
 
