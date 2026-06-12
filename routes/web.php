@@ -6,6 +6,8 @@ use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TransaksiPenjualanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\DashboardController;
+
 
 
 Route::get('/', function () {
@@ -27,12 +29,8 @@ Route::post('/logout',
 ->middleware('auth');
 
 
-
-Route::get('/dashboard', function(){
-
-    return view('dashboard');
-
-})
+Route::get('/dashboard',
+[DashboardController::class,'index'])
 ->middleware('auth');
 
 Route::resource(
