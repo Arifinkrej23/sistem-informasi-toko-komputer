@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <title>Sistem Penjualan Komputer</title>
-
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-
 </head>
-
-
 <body class="bg-light d-flex flex-column min-vh-100">
-
-
-
-
-
 <nav class="navbar navbar-dark bg-dark">
-
-
 <div class="container">
-
-
 <a class="navbar-brand fw-bold">
-
 Sistem Penjualan Komputer
-
 </a>
 
 
